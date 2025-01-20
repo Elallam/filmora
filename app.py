@@ -49,7 +49,7 @@ def predict():
     X, y = prepare_features(features_df)
     prediction = model.predict(X)
     print(float(prediction[0]))
-    return jsonify({"revenue" : float(prediction[0])})
+    return jsonify({"revenue" : float(math.exp(prediction[0]))})
 
 if __name__ == '__main__':
     app.run(debug=True)
